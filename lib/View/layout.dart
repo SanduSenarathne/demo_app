@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'callPage.dart';
 import 'chatPage.dart';
 import 'statusPage.dart';
+import 'package:get/get.dart';
 
 class LayoutPage extends StatelessWidget {
   LayoutPage({Key? key}) : super(key: key);
@@ -98,11 +99,26 @@ class LayoutPage extends StatelessWidget {
         body: TabBarView(
           children: [
             // Chat screen
-            ChatPage(),
+            GetBuilder<ChatController>(
+              init: ChatController(),
+              builder: (controller) {
+                return ChatPage(controller: controller);
+              },
+            ),
             // Status screen
-            StatusPage(),
+            GetBuilder<StatusController>(
+              init: StatusController(),
+              builder: (controller) {
+                return StatusPage(controller: controller);
+              },
+            ),
             // Calls screen
-            CallerPage(),
+            GetBuilder<CallsController>(
+              init: CallsController(),
+              builder: (controller) {
+                return CallerPage(controller: controller);
+              },
+            ),
           ],
         ),
       ),
