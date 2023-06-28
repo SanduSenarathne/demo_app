@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'callPage.dart';
+import 'chatPage.dart';
+import 'statusPage.dart';
 
 class LayoutPage extends StatelessWidget {
+  LayoutPage({Key? key}) : super(key: key);
+
   final List<Tab> myTabs = <Tab>[
-    Tab(text: 'Chats'),
-    Tab(text: 'Status'),
-    Tab(text: 'Calls'),
+    const Tab(text: 'Chats'),
+    const Tab(text: 'Status'),
+    const Tab(text: 'Calls'),
   ];
 
   @override
@@ -13,7 +18,7 @@ class LayoutPage extends StatelessWidget {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromARGB(255, 32, 32, 32),
           title: Row(
             children: [
               Text(
@@ -26,11 +31,17 @@ class LayoutPage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.camera),
+              icon: Icon(
+                Icons.camera_alt_outlined,
+                size: 30,
+              ),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(
+                Icons.search,
+                size: 30,
+              ),
               onPressed: () {},
             ),
             PopupMenuButton(
@@ -87,26 +98,11 @@ class LayoutPage extends StatelessWidget {
         body: TabBarView(
           children: [
             // Chat screen
-            Container(
-              color: Colors.white,
-              child: Center(
-                child: Text('Chats'),
-              ),
-            ),
+            ChatPage(),
             // Status screen
-            Container(
-              color: Colors.white,
-              child: Center(
-                child: Text('Status'),
-              ),
-            ),
+            StatusPage(),
             // Calls screen
-            Container(
-              color: Colors.white,
-              child: Center(
-                child: Text('Calls'),
-              ),
-            ),
+            CallerPage(),
           ],
         ),
       ),
