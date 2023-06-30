@@ -12,7 +12,7 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> personData = [
+    List<Map<String, dynamic>> chatData = [
       {
         'name': 'Person 1',
         'icon': Icons.person,
@@ -35,9 +35,9 @@ class ChatPage extends StatelessWidget {
             height: 1,
           ),
           padding: EdgeInsets.all(0.0),
-          itemCount: personData.length,
+          itemCount: chatData.length,
           itemBuilder: (context, i) {
-            final person = personData[i];
+            final person = chatData[i];
             return Container(
               height: 100,
               width: double.infinity,
