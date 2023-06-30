@@ -25,6 +25,26 @@ class ChatPage extends StatelessWidget {
         'name': 'Person 3',
         'icon': Icons.person,
       },
+      {
+        'name': 'Person 4',
+        'icon': Icons.person,
+      },
+      {
+        'name': 'Person 5',
+        'icon': Icons.person,
+      },
+      {
+        'name': 'Person 6',
+        'icon': Icons.person,
+      },
+      {
+        'name': 'Person 7',
+        'icon': Icons.person,
+      },
+      {
+        'name': 'Person 8',
+        'icon': Icons.person,
+      },
     ];
 
     return Container(
