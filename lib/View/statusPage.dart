@@ -30,63 +30,80 @@ class StatusPage extends StatelessWidget {
       },
     ];
 
-    return Container(
-      color: Colors.black,
-      child: Scrollbar(
-        child: ListView.separated(
-          separatorBuilder: (context, child) => Divider(
-            height: 1,
-          ),
-          padding: EdgeInsets.all(0.0),
-          itemCount: statusData.length,
-          itemBuilder: (context, i) {
-            final person = statusData[i];
-            return Container(
-              height: 100,
-              width: double.infinity,
-              color: Colors.black,
-              child: Row(
-                children: [
-                  SizedBox(width: 16),
-                  CircleAvatar(
-                    radius: 30,
-                    child: Icon(
-                      person['icon'],
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: 16),
-                  Row(
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Scrollbar(
+            child: ListView.separated(
+              separatorBuilder: (context, child) => Divider(
+                height: 1,
+              ),
+              padding: EdgeInsets.all(0.0),
+              itemCount: statusData.length,
+              itemBuilder: (context, i) {
+                final person = statusData[i];
+                return Container(
+                  height: 100,
+                  width: double.infinity,
+                  color: Colors.black,
+                  child: Row(
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      SizedBox(width: 16),
+                      CircleAvatar(
+                        radius: 30,
+                        child: Icon(
+                          person['icon'],
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(width: 16),
+                      Row(
                         children: [
-                          Text(
-                            person['name'],
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            person['time'],
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                person['name'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                person['time'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     ],
                   ),
-                ],
+                );
+              },
+            ),
+          ),
+          Positioned(
+            bottom: 16,
+            right: 16,
+            child: Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color.fromRGBO(37, 211, 101, 0.719),
               ),
-            );
-          },
-        ),
+              child: Icon(Icons.camera_alt, color: Colors.white),
+            ),
+          ),
+        ],
       ),
     );
   }
