@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'call_info.dart';
 
 class CallsController extends GetxController {
   // Add your controller logic here
@@ -54,59 +55,69 @@ class CallerPage extends StatelessWidget {
               itemCount: statusData.length,
               itemBuilder: (context, i) {
                 final person = statusData[i];
-                return Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.black,
-                  child: Stack(
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 16),
-                          CircleAvatar(
-                            radius: 30,
-                            child: Icon(
-                              person['icon'],
-                              size: 30,
-                              color: Colors.white,
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CallInfo(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Colors.black,
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(width: 16),
+                            CircleAvatar(
+                              radius: 30,
+                              child: Icon(
+                                person['icon'],
+                                size: 30,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 16),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                person['name'],
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                            SizedBox(width: 16),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  person['name'],
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                person['time'],
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
+                                Text(
+                                  person['time'],
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Positioned(
-                        bottom: 40,
-                        right: 8,
-                        child: Icon(
-                          person['callType'] == CallType.audio
-                              ? Icons.call
-                              : Icons.videocam,
-                          size: 24,
-                          color: Color.fromRGBO(37, 211, 102, 1.0),
+                              ],
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          bottom: 40,
+                          right: 8,
+                          child: Icon(
+                            person['callType'] == CallType.audio
+                                ? Icons.call
+                                : Icons.videocam,
+                            size: 24,
+                            color: Color.fromRGBO(37, 211, 102, 1.0),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
