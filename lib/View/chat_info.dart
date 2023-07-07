@@ -88,10 +88,19 @@ class ChatInfo extends StatelessWidget {
                   value: 'wallpaper',
                 ),
                 PopupMenuItem(
-                  child: Text(
-                    'More',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'More',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                      ]),
                   value: 'more',
                 ),
               ];
