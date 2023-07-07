@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'chat_info.dart';
 
 class ChatController extends GetxController {
   // Add your controller logic here
@@ -60,31 +61,41 @@ class ChatPage extends StatelessWidget {
               itemCount: chatData.length,
               itemBuilder: (context, i) {
                 final person = chatData[i];
-                return Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.black,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 16),
-                      CircleAvatar(
-                        radius: 30,
-                        child: Icon(
-                          person['icon'],
-                          size: 30,
-                          color: Colors.white,
-                        ),
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChatInfo(),
                       ),
-                      SizedBox(width: 16),
-                      Text(
-                        person['name'],
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                    );
+                  },
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Colors.black,
+                    child: Row(
+                      children: [
+                        SizedBox(width: 16),
+                        CircleAvatar(
+                          radius: 30,
+                          child: Icon(
+                            person['icon'],
+                            size: 30,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 16),
+                        Text(
+                          person['name'],
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
