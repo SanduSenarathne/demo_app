@@ -106,6 +106,57 @@ class ChatInfo extends StatelessWidget {
               ];
             },
             color: Color.fromARGB(255, 123, 123, 123),
+            onSelected: (value) {
+              if (value == 'more') {
+                showMenu(
+                  context: context,
+                  position: RelativeRect.fromLTRB(
+                    MediaQuery.of(context).size.width - 150,
+                    kToolbarHeight,
+                    0,
+                    0,
+                  ),
+                  items: [
+                    PopupMenuItem(
+                      child: Text(
+                        'Report',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      value: 'report',
+                    ),
+                    PopupMenuItem(
+                      child: Text(
+                        'Block',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      value: 'block',
+                    ),
+                    PopupMenuItem(
+                      child: Text(
+                        'Clear chat',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      value: 'clear',
+                    ),
+                    PopupMenuItem(
+                      child: Text(
+                        'Export chat',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      value: 'export',
+                    ),
+                    PopupMenuItem(
+                      child: Text(
+                        'Add shortcut',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      value: 'shortcut',
+                    ),
+                  ],
+                  color: Color.fromARGB(255, 123, 123, 123),
+                );
+              }
+            },
           ),
         ],
       ),
