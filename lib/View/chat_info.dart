@@ -163,15 +163,16 @@ class ChatInfo extends StatelessWidget {
       body: Column(children: [
         Expanded(
           child: Container(
-              //Chat message code
-              ),
+            color: Colors.black,
+            //Chat message code
+          ),
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.grey[200],
+            color: Color.fromARGB(255, 32, 32, 32),
             border: Border(
               top: BorderSide(
-                color: Colors.grey,
+                color: Color.fromARGB(200, 67, 67, 67),
                 width: 0.5,
               ),
             ),
@@ -181,10 +182,18 @@ class ChatInfo extends StatelessWidget {
             children: [
               Expanded(
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     hintText: 'Message',
+                    hintStyle: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 18.0,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(200, 67, 67, 67),
+                      ),
                     ),
                   ),
                 ),
