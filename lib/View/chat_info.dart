@@ -160,54 +160,56 @@ class ChatInfo extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(children: [
-        Expanded(
-          child: Container(
-            color: Colors.black,
-            //Chat message code
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 32, 32, 32),
-            border: Border(
-              top: BorderSide(
-                color: Color.fromARGB(200, 67, 67, 67),
-                width: 0.5,
-              ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.black,
+              //Chat message code
             ),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Message',
-                    hintStyle: TextStyle(
-                      color: Colors.grey[400],
-                      fontSize: 18.0,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(200, 67, 67, 67),
+          Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 32, 32, 32),
+              border: Border(
+                top: BorderSide(
+                  color: Color.fromARGB(200, 67, 67, 67),
+                  width: 0.5,
+                ),
+              ),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: 'Message',
+                      hintStyle: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 18.0,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(200, 67, 67, 67),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              IconButton(
-                icon: Icon(Icons.send),
-                onPressed: () {
-                  //handle send button function
-                },
-              ),
-            ],
-          ),
-        )
-      ]),
+                IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () {
+                    //handle send button function
+                  },
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
