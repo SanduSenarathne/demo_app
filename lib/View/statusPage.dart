@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:demo_whatsapp/createStatus.dart';
+import 'createStatusPage.dart';
 
 class StatusController extends GetxController {
   // Add your controller logic here
