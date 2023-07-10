@@ -160,6 +160,45 @@ class ChatInfo extends StatelessWidget {
           ),
         ],
       ),
+      body: Column(children: [
+        Expanded(
+          child: Container(
+              //Chat message code
+              ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            border: Border(
+              top: BorderSide(
+                color: Colors.grey,
+                width: 0.5,
+              ),
+            ),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Message',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: Icon(Icons.send),
+                onPressed: () {
+                  //handle send button function
+                },
+              ),
+            ],
+          ),
+        )
+      ]),
     );
   }
 }
