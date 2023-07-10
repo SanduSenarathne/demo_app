@@ -7,7 +7,7 @@ class CreateStatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Status'),
+        title: Text('Create Status Page'),
       ),
       body: Center(
         child: Text('Create your status here'),
