@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:demo_whatsapp/createStatus.dart';
 
 class StatusController extends GetxController {
   // Add your controller logic here
@@ -101,6 +102,27 @@ class StatusPage extends StatelessWidget {
                 color: Color.fromRGBO(37, 211, 101, 0.719),
               ),
               child: Icon(Icons.camera_alt, color: Colors.white),
+            ),
+          ),
+          Positioned(
+            bottom: 80,
+            right: 25,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateStatusPage()),
+                );
+              },
+              child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color.fromARGB(200, 67, 67, 67),
+                ),
+                child: Icon(Icons.edit, color: Colors.white),
+              ),
             ),
           ),
         ],
