@@ -23,6 +23,7 @@ class CreateStatusPage extends StatelessWidget {
                         },
                         icon: Icon(Icons.close),
                         color: Colors.white,
+                        iconSize: 35,
                       ),
                     ],
                   ),
@@ -33,11 +34,19 @@ class CreateStatusPage extends StatelessWidget {
                         onPressed: () {},
                         icon: Icon(Icons.tag_faces_sharp),
                         color: Colors.white,
+                        iconSize: 35,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.text_fields),
+                        color: Colors.white,
+                        iconSize: 35,
                       ),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.color_lens),
                         color: Colors.white,
+                        iconSize: 35,
                       ),
                     ],
                   ),
@@ -55,7 +64,7 @@ class CreateStatusPage extends StatelessWidget {
                   decoration: InputDecoration.collapsed(
                     hintText: 'Type a status',
                     hintStyle: TextStyle(
-                      color: Colors.purple[200],
+                      color: Colors.blue[200],
                       fontSize: 40,
                     ),
                   ),
